@@ -1,0 +1,23 @@
+{
+  "name": "@jhadev/use-form",
+  "version": "0.0.1",
+  "description": "React hook to quickly generate simple forms.",
+  "license": "MIT",
+  "repository": "jhadev/use-form",
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "keywords": [
+    "jhadev",
+    "hooks",
+    "react",
+    "form",
+    "npm"
+  ],
+  "bugs": {
+    "url": "https://github.com/jhadev/use-form/issues"
+  },
+  "homepage": "https://github.com/jhadev/use-form/"
+}
