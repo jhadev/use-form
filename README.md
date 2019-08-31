@@ -2,6 +2,10 @@
 
 _in progress_
 
+**EXPERIMENTAL**
+
+There may be bugs and this only suits certain use cases.
+
 npm install or yarn add @jhadev/use-form
 
 **uses bootstrap by default** but can be customized.
