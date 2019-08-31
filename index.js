@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 
-// reducer to emulate this.setState
 const reducer = (currentState, newState) => {
   return { ...currentState, ...newState };
 };
@@ -30,25 +29,19 @@ const genId = () => {
   }
 }
 const createCache = genId()
-// call useForm with initialState object in any functional component
+
 const useForm = (initialState, formName = 'default') => {
-  // initialize useReducer and extract state object and setState function from it.
+
   const [formState, setFormState] = useReducer(reducer, initialState);
 
-  // handle setting state with the value of the input based on input name tags
   const onChange = event => {
     const { name, value } = event.target;
     setFormState({ [name]: value });
   };
 
-  // takes in the formState object as an arg in the functional component
-  // create an array of arrays with key, value pairs.
-  // return a closure that uses the state object to map inputs as JSX
-
   const mapInputs = (state, filter) => {
-
     let stateToMap = Object.entries(state);
-    // if there is an array of filter deps get them ready to map
+
     if (filter) {
       const filteredState = filter
         .reduce((obj, key) => ({ ...obj, [key]: state[key] }), {});
@@ -59,8 +52,6 @@ const useForm = (initialState, formName = 'default') => {
       if (options.length) {
         // placeholder to do something else.
         options = [...options];
-        // if there is a className defined in first dependency obj
-        // use it for every dep that doesn't have a className.
         const [{ className }] = options
         if (className) {
           options = options.map(dependency => {
