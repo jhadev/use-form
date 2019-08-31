@@ -1,6 +1,10 @@
-# React hook to gen forms.
+# React hook to generate simple forms.
 
 _in progress_
+
+npm install or yarn add @jhadev/use-form
+
+**uses bootstrap by default** but can be customized.
 
 ## **usage**
 
@@ -10,7 +14,7 @@ In any functional component...
 
 ```
 import React from 'react';
-import { useForm } from '../hooks/useForm';
+import { useForm } from '@jhadev/use-form';
 
 const SomeForm = props => {
 
@@ -58,9 +62,9 @@ This means if another form is not named, there will be duplicate ids. It is just
     const { email, password } = formState
 
     props.firebase.signInWithEmailAndPassword(email, password)
-      .then(() => {
+      .then(response => {
         setFormState({ email: '', password: '', success: true })
-        props.history.push('/home')
+        ....
       }).catch(error => {
         setFormState({ error, success: false })
       })
