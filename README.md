@@ -10,7 +10,25 @@ npm install or yarn add @jhadev/use-form
 
 **uses bootstrap by default** but can be customized.
 
+**0.0.4 - support for textarea (define textarea in the option object)**
+
+_Next version will support an entire form rather than only inputs._
+
+```
+{
+  textarea: { rows: 4, maxLength: 200 },
+  placeholder: 'this is a text area'
+}
+```
+
 ## **usage**
+
+Examples:
+
+- [Map all of state to inputs with no options](#map-all-of-state-to-inputs-with-no-options)
+- [Map some of state into inputs](#map-some-of-state-into-inputs)
+- [Map all of state into inputs with options](#map-all-of-state-into-inputs-with-options)
+- [Map and filter state into inputs with options](#map-and-filter-state-into-inputs-with-options)
 
 ---
 
@@ -167,7 +185,7 @@ This means if another form is not named, there will be duplicate ids. It is just
 
 ### **Map all of state into inputs with options**
 
-Options are: **label, id, className, placeholder, type**
+Options are: **label, id, className, placeholder, type, textarea**
 
 There is no need to define classNames for every options object if they are all the same.
 If a className property exists for the first options object, it will be automatically added to the rest of the inputs.
@@ -175,6 +193,24 @@ If classNames exist for any of the following option objects, they will not be re
 
 Labels are off by default.
 If a label is specified for an input field, but no id is provided, an id will be created to match the label's htmlFor property.
+
+To define a textarea create a property in the object called 'textarea', and define either an empty object inside it for no options, or define rows and/or maxLength. Default row size is 3.
+
+```
+{
+  textarea: { rows: 4, maxLength: 200 },
+  placeholder: 'this is a text area'
+}
+```
+
+OR
+
+```
+{
+  textarea: {},
+  placeholder: 'this is a text area'
+}
+```
 
 ```
 const types = [
