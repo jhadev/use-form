@@ -10,6 +10,38 @@ npm install or yarn add @jhadev/use-form
 
 **uses bootstrap by default** but can be customized.
 
+In alpha version:
+
+- support for textarea (define textarea in option object)
+
+```
+{
+  textarea: { rows: 4, maxLength: 200 },
+  placeholder: 'this is a text area'
+}
+```
+
+- mapForm functions
+
+```
+ const { formState, setFormState, mapForm } = useForm(
+    {
+      name: '',
+      comment: ''
+    },
+    'example-with-submit'
+  );
+
+  ...
+
+  const isInvalid = formState.name === '' || formState.comment === '';
+
+  // pass submit function and expression to disable button after formOptions
+
+  const displayForm = mapForm(formState)(formOptions)(postForm, isInvalid);
+
+```
+
 ## **usage**
 
 ---

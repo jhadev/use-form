@@ -4,7 +4,10 @@
   "description": "React hook to quickly generate simple forms.",
   "license": "MIT",
   "repository": "jhadev/use-form",
-  "main": "babel-index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npx babel --plugins @babel/plugin-transform-react-jsx src/index.js --out-file lib/index.js"
+  },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
