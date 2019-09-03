@@ -12,7 +12,7 @@ npm install or yarn add @jhadev/use-form
 
 In alpha version:
 
-- support for textarea (define textarea in option object)
+- support for textarea (define textarea in the option object)
 
 ```
 {
@@ -21,7 +21,11 @@ In alpha version:
 }
 ```
 
-- mapForm functions
+- mapForm function
+
+This creates the entire form with button to submit.
+Id of button is _formName_-button, className is set to btn.
+Button text is set to 'Submit' by default.
 
 ```
  const { formState, setFormState, mapForm } = useForm(
